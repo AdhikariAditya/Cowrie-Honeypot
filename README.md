@@ -7,4 +7,5 @@ telemetry into a Wazuh SIEM for custom detection rule development.
 
 Read the full data analysis I have done for the first 2-3 days [here](https://github.com/AdhikariAditya/Cowrie-Honeypot/blob/main/Writeup/README.md)
 
-<sub>*Look at my [SOC home lab](https://github.com/AdhikariAditya/SOC-Home-Lab) too if you can!</sub>
+---
+Look at my [SOC home lab](https://github.com/AdhikariAditya/SOC-Home-Lab) too if you can!
