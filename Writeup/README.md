@@ -81,6 +81,10 @@ Now this is already a lot to dissect. After just 2-3 days of honeypot uptime, a 
 
 4. The final category is the client software attackers use. Many attackers are just bots instructed to find open SSH ports and run a preselected set of commands, which is why certain commands recur so heavily — these bots share common source code. SSH-2.0-Go alone accounts for 4,429 connections; Go is the de facto library for building custom scanners and botnets, so the large majority of this traffic is automated rather than human-driven. A small number of sessions used PUTTY or an OpenSSH client on Raspbian, distinct from the automated Go-based clients that dominate the traffic.
 
+### Conclusion
+
+It was genuinely surprising to see the sheer volume of attacks and data that has been collected over just three days. Even while emulating my own attacks for my SOC Home Lab project, I could not even imagine the sheer amount of attacks that an actual analyst might have to face and sort through. My next step in this project is to make more custom rules: this time in both XML for Wazuh and Sigma for other SIEMs. 
+
 ## Additional Notes
 
 The Oracle system is fitted with my public key; it will only accept connections from my private key.
