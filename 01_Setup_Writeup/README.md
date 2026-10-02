@@ -53,7 +53,7 @@ Now this is already a lot to dissect. After just 2-3 days of honeypot uptime, a 
 
 3. The most commonly executed commands are largely the same across sessions. Attackers first run a discovery command (ATT&CK T1082) via uname. The second most common command simply prints xsec to the console — my best guess is that this is a liveness check, confirming the shell is a real interactive terminal before the attacker invests further steps. Most of the observed commands are discovery-stage. The two least common command sequences actually downloaded files to infect the honeypot: scp transfers the file, and chmod/bash execute it. Luckily, Cowrie saves every downloaded file to disk, named by its hash.
 
-   ![Downloads directory listing on the honeypot host](/Writeup/images/image7.png)
+   ![Downloads directory listing on the honeypot host](/01_Setup_Writeup/images/image7.png)
 
    VirusTotal reveals interesting things about these hashes (numbering the hash right after .gitignore as 1):
 
