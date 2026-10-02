@@ -44,7 +44,7 @@ This rule is limited by the fact that if an attacker is tailoring a program agai
 
 Let’s test out the rule:
 
-[Video of Rule Firing](/02_Rules_Writeup/Media/Wazuh%20Log%20In%20Rules.mp4)
+[Video of Rule Firing](/02_Rules_Writeup/Videos/Wazuh%20Log%20In%20Rules.mp4)
 
 Our rule has successfully worked and flagged me as human. So officially, if any attacker tries to brute force themselves into my honeypot, Wazuh SIEM will detect it immediately. 
 
@@ -92,7 +92,7 @@ This rule has the same limitations as the rules for brute force attacks and ther
 
 Let's test these and see if they appear on Wazuh. For this test, I will use these commands: "uname -s -v -n -r -m", "echo xsec", "hostname" and "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${PATH:", all of which are commands which are used by attackers on the honeypot — including the truncated PATH variable.
 
-[Video of Rule Firing](/02_Rules_Writeup/Media/Wazuh%20Command%20Line%20Execution%20Rules.mp4)
+[Video of Rule Firing](/02_Rules_Writeup/Videos/Wazuh%20Command%20Line%20Execution%20Rules.mp4)
 
 Again, the rules work successfully and I am once again flagged correctly as a human. So no matter who logs in and tries to work around my system, I will get alerted on their activities and if they are a human or bot.
 
@@ -131,7 +131,7 @@ This rule however has a fatal limitation: it can run out. My VirusTotal API key 
 
 Now that we have set up and defined the rule, let us now see it in action by using an EICAR file. EICAR test files are small strings of text that are designed to flag antiviruses for testing purposes, just like ours. So by using the EICAR.txt, let's see if our rule is flagged properly and integrated with VirusTotal or not.
 
-[Video of Rule Firing](/02_Rules_Writeup/Media/Wazuh%20Ingress%20File%20Transfer%20Rule%20Firing.mp4)
+[Video of Rule Firing](/02_Rules_Writeup/Videos/Wazuh%20Ingress%20File%20Transfer%20Rule%20Firing.mp4)
 
 Success, the rule fires and the file is checked against VirusTotal correctly. We have now implemented a basic download monitoring system through Wazuh.
 
