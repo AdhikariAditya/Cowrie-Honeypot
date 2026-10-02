@@ -43,7 +43,7 @@ print('=== Client software ==='); [print(f'{n}x  {v}') for v,n in clients.most_c
 
 ### 5th September 2026 – 7th September 2026
 
-![Top attacker IPs, credentials, commands, and client software](/Writeup/images/image1.png)
+![Top attacker IPs, credentials, commands, and client software](/01_Setup_Writeup/images/image1.png)
 
 Now this is already a lot to dissect. After just 2-3 days of honeypot uptime, a lot of data has been generated. Let's start from the top:
 
@@ -59,23 +59,23 @@ Now this is already a lot to dissect. After just 2-3 days of honeypot uptime, a 
 
    1. This hash was flagged as a trojan horse by 1 of 61 vendors (first reported by Kingsoft). Given the file is only 54 bytes — far too small to contain functional malicious code — this is most likely a heuristic false positive rather than a genuine threat.
 
-      ![VirusTotal: 1/61 detections, 54 bytes](/Writeup/images/image3.png)
+      ![VirusTotal: 1/61 detections, 54 bytes](/01_Setup_Writeup/images/image3.png)
 
    2. This hash is a benign file, possibly used by the attacker as a test file to confirm downloads can occur on the system.
 
-      ![VirusTotal: 0/61 detections, 399 bytes](/Writeup/images/image2.png)
+      ![VirusTotal: 0/61 detections, 399 bytes](/01_Setup_Writeup/images/image2.png)
 
    3. This hash is an IRC-based botnet trojan responsible for establishing backdoor access to a system.
 
-      ![VirusTotal: 40/61 detections, ircbot/shell family](/Writeup/images/image4.png)
+      ![VirusTotal: 40/61 detections, ircbot/shell family](/01_Setup_Writeup/images/image4.png)
 
    4. This hash belongs to a known cryptocurrency miner — the attacker would piggyback off the host's hardware to mine cryptocurrency for their own benefit.
 
-      ![VirusTotal: 44/61 detections, miner family](/Writeup/images/image6.png)
+      ![VirusTotal: 44/61 detections, miner family](/01_Setup_Writeup/images/image6.png)
 
    5. Although this hash is flagged by 36/63 security vendors, VirusTotal's own code insights — which analyze a file's binary to determine its true purpose — reveal that this is actually a legitimate networking tool called Tailscale, with no malicious behavior (e.g. C2 communication or persistence) detected. The file itself isn't malicious, but a legitimate remote-access tool like this could still be dropped by an attacker to establish a persistent, encrypted access channel that blends in with normal VPN traffic.
 
-      ![VirusTotal: 36/63 detections, code insights identify Tailscale](/Writeup/images/image5.png)
+      ![VirusTotal: 36/63 detections, code insights identify Tailscale](/01_Setup_Writeup/images/image5.png)
 
    Attackers will use any and all tools in their arsenal for their own benefit.
 
