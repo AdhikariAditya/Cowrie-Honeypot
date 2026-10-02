@@ -135,6 +135,6 @@ Now that we have set up and defined the rule, let us now see it in action by usi
 
 Success, the rule fires and the file is checked against VirusTotal correctly. We have now implemented a basic download monitoring system through Wazuh.
 
-# Conclusion;
+# Conclusion
 
 We have now finally made custom rules for attackers. Not only do two of them detect any attacks, they also detect if a human or a robot is responsible for the attacks. Our final rule also implements a simple download monitoring system against any illegal downloads. Thank you for reading my writeup, hope you also visit my SOC Home Lab where I first started writing custom rules against my own attacks.
